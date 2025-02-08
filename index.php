@@ -314,7 +314,7 @@
                             </div>
                             <!-- <a href="#0" class="search-trigger search-icon"><i class="fal fa-search"></i></a> -->
                             <div class="header-button">
-                                <a href="dashboard/login" class="theme-btn">
+                                <a href="dashboard-alumnos/login" class="theme-btn">
                                     <span>
                                         Iniciar Sesión
                                         <i class="fa-solid fa-arrow-right-long"></i>
