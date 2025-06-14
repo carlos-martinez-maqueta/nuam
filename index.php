@@ -6,10 +6,10 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="gramentheme">
-        <meta name="description" content="Kidsa - Kindergarten School HTML Template">
+        <meta name="author" content="">
+        <meta name="description" content="">
         <!-- ======== Page title ============ -->
-        <title>Kidsa - Kindergarten School HTML Template</title>
+        <title></title>
         <!--<< Favcion >>-->
         <link rel="shortcut icon" href="assets/img/favicon.svg">
         <!--<< Bootstrap min.css >>-->
@@ -314,12 +314,18 @@
                             </div>
                             <!-- <a href="#0" class="search-trigger search-icon"><i class="fal fa-search"></i></a> -->
                             <div class="header-button">
-                                <a href="dashboard-alumnos/login" class="theme-btn">
+                                <!-- <a href="dashboard-alumnos/login" class="theme-btn">
                                     <span>
                                         Iniciar Sesión
                                         <i class="fa-solid fa-arrow-right-long"></i>
                                     </span>
-                                </a>
+                                </a> -->
+                                <a href="dashboard" class="theme-btn">
+                                    <span>
+                                        Iniciar Sesión
+                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                    </span>
+                                </a>                                
                             </div>
                             <div class="header__hamburger d-xl-none my-auto">
                                 <div class="sidebar__toggle">

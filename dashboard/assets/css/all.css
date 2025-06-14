@@ -1,0 +1,59 @@
+.nxl-navigation .logo{
+    width: 150px;
+    margin: auto;
+}
+.nxl-navigation .m-header{
+    height: 110px;
+}
+.nxl-navigation .m-header a{
+    width: 100%;
+    text-align: center;
+}
+
+/*EFECTO*/
+.parasuit-shape{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+}
+/*RESERVAR CITAS*/
+.btn_nuam{
+    background-color: #3c2259a6 !important;
+    color: #ffffff;
+    width: fit-content;
+    margin: auto;
+}
+
+
+/*PRUEBAS DE CONOCIMIENTO*/
+.card_pruebas_conocimiento .nav button{
+    padding: 20px;
+    border-radius: 15px;
+    font-weight: 800;
+}
+.card_pruebas_conocimiento .nav button.completado{
+    background-color: #3c2259a6 !important;
+    color: #ffffff;
+}
+.card_pruebas_conocimiento .nav button.pendiente{ 
+    background-color: #F39F5F !important;
+    color: #ffffff;
+}
+.card_pruebas_conocimiento .nav button:disabled{
+    background-color: #f2f2f2;
+}
+
+/**/
+.content-eventos h4{
+    font-size: 24px;
+}
+
+@media screen and (max-width: 765px){
+    .content-eventos h4{
+        font-size: 16px;
+    }
+    .content-eventos .time{
+        font-size: 11px;
+        font-weight: 700;
+    }
+}
