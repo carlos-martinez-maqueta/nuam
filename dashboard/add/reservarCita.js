@@ -11,13 +11,11 @@ $(document).ready(function () {
             data: formData5,
             processData: false,
             contentType: false,
-            dataType: "json", // Especifica que esperas una respuesta JSON
+            dataType: "json",
             beforeSend: function () {
-                // Muestra el overlay de carga antes de enviar la solicitud
                 $("#loading-overlay").css("display", "flex");
             },
             success: function (response) {
-                // Oculta el overlay de carga después de procesar la respuesta
                 $("#loading-overlay").css("display", "none");
 
                 try {

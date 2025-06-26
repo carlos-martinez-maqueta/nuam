@@ -23,7 +23,7 @@
         <div class="header-right ms-auto">
             <div class="d-flex align-items-center">
                 <div class="name_user_header mx-3">
-                    <p class="m-0"><b>Bienvenido, Carlos</b></p>
+                    <p class="m-0"><b>Bienvenido, <?=$userObj->nombres?></b></p>
                 </div>
                 <div class="dropdown nxl-h-item">
                     <a href="javascript:void(0);" data-bs-toggle="dropdown" role="button" data-bs-auto-close="outside">
@@ -34,8 +34,8 @@
                             <div class="d-flex align-items-center">
                                 <img src="assets/images/avatar/1.png" alt="user-image" class="img-fluid user-avtar" />
                                 <div>
-                                    <h6 class="text-dark mb-0">Carlos Martinez <span class="badge bg-soft-success text-success ms-1">ALUMNO</span></h6>
-                                    <span class="fs-12 fw-medium text-muted">cmartinez@okarikperu.com</span>
+                                    <h6 class="text-dark mb-0"><?=$userObj->apellidos?> <span class="badge bg-soft-success text-success ms-1">ALUMNO</span></h6>
+                                    <span class="fs-12 fw-medium text-muted"><?=$userObj->correo?></span>
                                 </div>
                             </div>
                         </div>

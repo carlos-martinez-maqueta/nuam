@@ -1,3 +1,8 @@
+<?php 
+    include 'dashboard/config/conexion.php';
+    include 'dashboard/class/global.php';
+    $datosEmpresa = Globales::getDatos(1);
+?>
 <!DOCTYPE html>
 <html lang="en">
     <!--<< Header Area >>-->
@@ -125,12 +130,12 @@
                                         <i class="far fa-phone"></i>
                                     </div>
                                     <div class="offcanvas__contact-text">
-                                        <a href="tel:+11002345909">+11002345909</a>
+                                        <a href="tel:tel:+51 902192976">tel:+51 902192976</a>
                                     </div>
                                 </li>
                             </ul>
                             <div class="header-button mt-4">
-                                <a href="contact.html" class="theme-btn text-center">
+                                <a href="tel:+51 902192976" class="theme-btn text-center">
                                     <span>Get A Quote<i class="fa-solid fa-arrow-right-long"></i></span>
                                 </a>
                             </div>
@@ -157,19 +162,19 @@
                     <ul class="contact-list">
                         <li>
                             <i class="fal fa-map-marker-alt"></i>
-                            Dirección de ejemplo 102, Perú
+                            <?=$datosEmpresa->direccion_contacto;?>
                         </li>
                         <li>
                             <i class="far fa-envelope"></i>
-                            <a href="mailto:info@example.com" class="link">info@example.com</a>
+                            <a href="mailto:<?=$datosEmpresa->correo_contacto;?>" class="link"><?=$datosEmpresa->correo_contacto;?></a>
                         </li>
                     </ul>
                     <div class="social-icon d-flex align-items-center">
                         <span>Siguenos en nuestras redes:</span>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="<?=$datosEmpresa->link_facebook;?>"><i class="fab fa-facebook-f"></i></a>
+                        <a href="<?=$datosEmpresa->link_instagram;?>"><i class="fab fa-instagram"></i></a>
+                        <a href="<?=$datosEmpresa->link_linkedin;?>"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="<?=$datosEmpresa->link_otros;?>"><i class="fa-brands fa-siteweb"></i></a>
                     </div>
                 </div>
             </div>
@@ -186,26 +191,6 @@
                                     <img src="assets/img/logo/logo_nuam.png" alt="logo-img">
                                 </a>
                             </div>
-                            <!-- <div class="category-oneadjust">
-                                <img src="assets/img/grid.svg" alt="img" class="me-2">
-                                <select name="cate" class="category">
-                                    <option value="1">
-                                        Category
-                                    </option>
-                                    <option value="1">
-                                      Designer
-                                    </option>
-                                    <option value="1">
-                                     Developer
-                                    </option>
-                                    <option value="1">
-                                        Graphic
-                                    </option>
-                                    <option value="1">
-                                        Softwer
-                                    </option>
-                                </select>
-                            </div> -->
                         </div>
                         <div class="header-right d-flex justify-content-end align-items-center">
                             <div class="mean__menu-wrapper">
@@ -213,88 +198,11 @@
                                     <nav id="mobile-menu">
                                         <ul>
                                             <li class="has-dropdown active menu-thumb">
-                                                <a href="index.html">
+                                                <a href="#">
                                                 Inicio 
                                                 <!-- <i class="fas fa-angle-down"></i> -->
                                                 </a>
-                                                <!-- <ul class="submenu has-homemenu">
-                                                    <li>
-                                                        <div class="homemenu-items">
-                                                            <div class="homemenu">
-                                                                <div class="homemenu-thumb">
-                                                                    <img src="assets/img/header/home-1.jpg" alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="index.html" class="theme-btn">
-                                                                            <span>Multi Page</span>
-                                                                        </a>
-                                                                        <a href="index-one-page.html" class="theme-btn">
-                                                                            <span>One Page</span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        Home 01
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="homemenu">
-                                                                <div class="homemenu-thumb mb-15">
-                                                                    <img src="assets/img/header/home-2.jpg" alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="index-2.html" class="theme-btn">
-                                                                            <span>Multi Page</span>
-                                                                        </a>
-                                                                        <a href="index-two-page.html" class="theme-btn">
-                                                                            <span>One Page</span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        Home 02
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="homemenu">
-                                                                <div class="homemenu-thumb mb-15">
-                                                                    <img src="assets/img/header/home-3.jpg" alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="index-3.html" class="theme-btn">
-                                                                            <span>Multi Page</span>
-                                                                        </a>
-                                                                        <a href="index-three-page.html" class="theme-btn">
-                                                                            <span>One Page</span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        Home 03
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                            <div class="homemenu">
-                                                                <div class="homemenu-thumb mb-15">
-                                                                    <img src="assets/img/header/home-4.jpg" alt="img">
-                                                                    <div class="demo-button">
-                                                                        <a href="index-4.html" class="theme-btn">
-                                                                            <span>Multi Page</span>
-                                                                        </a>
-                                                                        <a href="index-four-page.html" class="theme-btn">
-                                                                            <span>One Page</span>
-                                                                        </a>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="homemenu-content text-center">
-                                                                    <h4 class="homemenu-title">
-                                                                        Home 04
-                                                                    </h4>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul> -->
+                                                
                                             </li>
                                             <li>
                                                 <a href="#about">Nosotros</a>
@@ -305,9 +213,7 @@
                                             <li>
                                                 <a href="#team">Equipo</a>
                                             </li>
-                                            <li>
-                                                <a href="#blog">Blog</a>
-                                            </li>
+                                            
                                         </ul>
                                     </nav>
                                 </div>
@@ -320,9 +226,9 @@
                                         <i class="fa-solid fa-arrow-right-long"></i>
                                     </span>
                                 </a> -->
-                                <a href="dashboard" class="theme-btn">
+                                <a href="login" class="theme-btn">
                                     <span>
-                                        Iniciar Sesión
+                                        Plataforma Virtual
                                         <i class="fa-solid fa-arrow-right-long"></i>
                                     </span>
                                 </a>                                
@@ -386,9 +292,9 @@
                             <h1 class="wow fadeInUp" data-wow-delay=".3s">
                                 Niños prometedores, <span>Un mañana</span> por delante
                             </h1>
-                            <p class="wow fadeInUp" data-wow-delay=".5s">Suspendisse non blandit sapien Nunc eleifend, enim et porta porta <br> eros risus tincidunt diam, vel sodales </p>
+                            <p class="wow fadeInUp" data-wow-delay=".5s">Creemos en su talento, su fuerza y su capacidad de transformar el mundo.</p>
                             <div class="hero-button">
-                                <a href="contact.html" class="theme-btn wow fadeInUp" data-wow-delay=".7s">
+                                <a href="tel:<?=$datosEmpresa->numero_contacto;?>" class="theme-btn wow fadeInUp" data-wow-delay=".7s">
                                     Contáctanos Hoy <i class="fa-solid fa-arrow-right-long"></i>
                                 </a>
                                 <span class="button-text wow fadeInUp" data-wow-delay=".8s">
@@ -401,7 +307,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="hero-image wow fadeInUp" data-wow-delay=".4s">
+                        <div class="hero-image wow fadeInUp text-end" data-wow-delay=".4s">
                             <img src="assets/img/hero/01.png" alt="hero-img">
                             <div class="hero-shape">
                                 <img src="assets/img/hero/hero-shape.png" alt="shape-img">
@@ -443,38 +349,38 @@
                             <div class="about-content">
                                 <div class="section-title">
                                     <span class="wow fadeInUp">Sobre nosotros</span>
-                                     <h2 class="wow fadeInUp" data-wow-delay=".3s">La mejor opción para niños</h2>
+                                     <h2 class="wow fadeInUp" data-wow-delay=".3s">La mejor opción para el desarrollo de los niños</h2>
                                 </div>
                                 <p class="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
-                                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse gravida vitae nisi in tincidunt.
+                                    En Nuam, creemos que cada niño tiene un enorme potencial. Nos dedicamos a guiarlos con programas integrales que combinan aprendizaje, deporte y desarrollo emocional en un entorno seguro, divertido y lleno de oportunidades.
                                 </p>
                                 <div class="about-list">
                                     <ul class="wow fadeInUp" data-wow-delay=".3s">
                                         <li>
                                             <i class="fa-regular fa-circle-check"></i>
-                                            Sports Training
+                                            Trabajo en equipo
                                         </li>
                                         <li>
                                             <i class="fa-regular fa-circle-check"></i>
-                                            Sports Training
+                                            Disciplina y constancia
                                         </li>
                                     </ul>
                                     <ul class="wow fadeInUp" data-wow-delay=".5s">
                                         <li>
                                             <i class="fa-regular fa-circle-check"></i>
-                                            Sports Training
+                                            Coordinación
                                         </li>
                                         <li>
                                             <i class="fa-regular fa-circle-check"></i>
-                                            Sports Training
+                                            Diversión activa
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="about-author">
                                     <div class="about-button wow fadeInUp" data-wow-delay=".3s">
-                                        <a href="about.html" class="theme-btn">
+                                        <!-- <a href="about.html" class="theme-btn">
                                             Explorar Más <i class="fa-solid fa-arrow-right-long"></i>
-                                        </a>
+                                        </a> -->
                                     </div>
                                     <div class="author-icon wow fadeInUp" data-wow-delay=".5s">
                                        <div class="icon">
@@ -483,7 +389,7 @@
                                         <div class="content">
                                             <span>Contáctanos</span>
                                             <h5>
-                                                <a href="tel:+2085550112">+51 902192976</a>
+                                                <a href="tel:<?=$datosEmpresa->numero_contacto;?>"><?=$datosEmpresa->numero_contacto;?></a>
                                             </h5>
                                         </div>
                                     </div>
@@ -530,13 +436,13 @@
                             </div>
                             <div class="program-content text-center">
                                 <h4>
-                                    <a href="program-details.html">Kindergarten</a>
+                                    <a href="#">Nivel 1</a>
                                 </h4>
                                 <span>(4-5 years)</span>
                                 <p>
-                                    Lorem ipsum dolor consectur the <br> adipiscing elit eiusmod.
+                                    Iniciamos con juegos y ejercicios básicos que desarrollan la coordinación, el equilibrio y la socialización, en un ambiente seguro y divertido.
                                 </p>
-                                <a href="program-details.html" class="arrow-icon">
+                                <a href="#" class="arrow-icon">
                                     <i class="fa-solid fa-arrow-right-long"></i>
                                 </a>
                             </div>
@@ -550,13 +456,13 @@
                             </div>
                             <div class="program-content text-center">
                                 <h4>
-                                    <a href="program-details.html">Chemistry Class</a>
+                                    <a href="#">Nivel 2</a>
                                 </h4>
                                 <span>(1-2 years)</span>
                                 <p>
-                                    Lorem ipsum dolor consectur the <br> adipiscing elit eiusmod.
+                                    Los niños empiezan a fortalecer habilidades físicas y cognitivas, incorporando dinámicas deportivas más estructuradas y trabajo en equipo.
                                 </p>
-                                <a href="program-details.html" class="arrow-icon color-2">
+                                <a href="#" class="arrow-icon color-2">
                                     <i class="fa-solid fa-arrow-right-long"></i>
                                 </a>
                             </div>
@@ -566,17 +472,17 @@
                         <div class="program-box-items">
                             <div class="program-bg bg-3"></div>
                              <div class="program-image">
-                                <img src="assets/img/program/01.jpg" alt="img">
+                                <img src="assets/img/program/03.jpg" alt="img">
                             </div>
                             <div class="program-content text-center style-2">
                                 <h4>
-                                    <a href="program-details.html">Drawing Class</a>
+                                    <a href="#">Nivel 3</a>
                                 </h4>
                                 <span>(1-2 years)</span>
                                 <p>
-                                    Lorem ipsum dolor consectur the <br> adipiscing elit eiusmod.
+                                    En este nivel se refuerzan la disciplina, el rendimiento físico y la técnica, preparando a los niños para asumir mayores retos con confianza y entusiasmo.
                                 </p>
-                                <a href="program-details.html" class="arrow-icon">
+                                <a href="#" class="arrow-icon">
                                     <i class="fa-solid fa-arrow-right-long"></i>
                                 </a>
                             </div>
@@ -600,9 +506,9 @@
                                     <i class="icon-icon-1"></i>
                                 </div>
                                 <div class="content">
-                                    <h4>Choose A Service</h4>
+                                    <h4>Docentes Expertos</h4>
                                     <p>
-                                        In a free hour, when our power of choice is untrammeled and 
+                                        Nuestros profesores están capacitados en pedagogía infantil y brindan una educación personalizada.
                                     </p>
                                 </div>
                             </div>
@@ -616,9 +522,9 @@
                                     <i class="icon-icon-2"></i>
                                 </div>
                                 <div class="content">
-                                    <h4>Expert Teachers</h4>
+                                    <h4>Plataforma E-Learning</h4>
                                     <p>
-                                        In a free hour, when our power of choice is untrammeled and 
+                                        Contamos con recursos digitales interactivos para reforzar el aprendizaje desde casa.
                                     </p>
                                 </div>
                             </div>
@@ -632,9 +538,9 @@
                                     <i class="icon-icon-3"></i>
                                 </div>
                                 <div class="content">
-                                    <h4>E-Learning Media</h4>
+                                    <h4>Programas de Día Completo</h4>
                                     <p>
-                                        In a free hour, when our power of choice is untrammeled and 
+                                        Ofrecemos jornadas completas con actividades educativas y recreativas.
                                     </p>
                                 </div>
                             </div>
@@ -642,9 +548,9 @@
                         <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
                             <div class="work-process-items text-center">
                                 <div class="content style-two">
-                                    <h4>Full Day Programs</h4>
+                                    <h4>Desarrollo Creativo</h4>
                                     <p>
-                                        In a free hour, when our power of choice is untrammeled and 
+                                        Fomentamos la imaginación y expresión artística.
                                     </p>
                                 </div>
                                 <div class="icon bg-cover" style="background-image: url('assets/img/process/icon-bg.png');">
@@ -685,7 +591,7 @@
                                     <h2 class="wow fadeInUp" data-wow-delay=".3s">Háganos saber acerca de <br> nuestro  Lectura y cultura</h2>
                                 </div>
                                 <p class="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                    Descubre las experiencias que marcan la diferencia en el desarrollo de tus hijos. Promovemos el aprendizaje a través del juego, la creatividad y el descubrimiento.
                                 </p>
                                 <div class="row g-4 mt-4">
                                     <div class="col-xl-6 col-lg-8 col-md-6 wow fadeInUp" data-wow-delay=".3s">
@@ -694,8 +600,8 @@
                                                <i class=" icon-icon-1"></i>
                                             </div>
                                             <div class="content">
-                                                <h5>Aprendizaje Temprano</h5>
-                                                <p>Elit Aenean scelerisque <br> vitae consequat the.</p>
+                                                <h5>Estimulación Cognitiva</h5>
+                                                <p>Actividades diseñadas.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -705,8 +611,8 @@
                                                 <i class="icon-icon-16"></i>
                                             </div>
                                             <div class="content">
-                                                <h5>Aprendizaje Temprano</h5>
-                                                <p>Elit Aenean scelerisque <br> vitae consequat the.</p>
+                                                <h5>Desarrollo Sensorial</h5>
+                                                <p>Talleres que exploran los sentidos.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -716,8 +622,8 @@
                                                 <i class="icon-icon-7"></i>
                                             </div>
                                             <div class="content">
-                                                <h5>Aprendizaje Temprano</h5>
-                                                <p>Elit Aenean scelerisque <br> vitae consequat the.</p>
+                                                <h5>Comunicación y Lenguaje</h5>
+                                                <p>Fomentamos la expresión verbal.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -727,8 +633,8 @@
                                                 <i class="icon-icon-8"></i>
                                             </div>
                                             <div class="content">
-                                                <h5>Aprendizaje Temprano</h5>
-                                                <p>Elit Aenean scelerisque <br> vitae consequat the.</p>
+                                                <h5>Habilidades Sociales</h5>
+                                                <p>Colaborar y resolver conflictos.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -951,7 +857,7 @@
                             <div class="section-title">
                                 <span class="text-white wow fadeInUp">Consigue tu Sesión</span>
                                 <h2 class="text-white wow fadeInUp" data-wow-delay=".3s">
-                                    Ven y sé parte de <br> Nuestra última sesión
+                                    Ven y sé parte de <br> Nuestra sesión
                                 </h2>
                             </div>
                             <div class="cta-button mt-4 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
@@ -974,7 +880,7 @@
         </section>
 
         <!-- News Section Start -->
-        <section class="news-section section-padding fix" id="blog">
+        <!-- <section class="news-section section-padding fix" id="blog">
             <div class="container">
                 <div class="section-title-area">
                     <div class="section-title">
@@ -1089,10 +995,10 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Main Cta Section Start -->
-        <section class="main-cta-section">
+        <!-- <section class="main-cta-section">
             <div class="plane-shape float-bob-y">
                 <img src="assets/img/plane.png" alt="shape-img">
             </div>
@@ -1123,10 +1029,10 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Instagram Banner Section Start -->
-        <div class="instagram-banner fix section-padding d-none">
+        <!-- <div class="instagram-banner fix section-padding d-none">
             <div class="instagram-wrapper">
                 <h3 class="text-center wow fadeInUp" data-wow-delay=".3s">Follow Instagram</h3>
                 <div class="swiper instagram-banner-slider">
@@ -1194,7 +1100,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!--<< Footer Section Start >>-->
         <footer class="footer-section section-bg fix">
@@ -1218,9 +1124,9 @@
                         </div>
                         <div class="content">
                             <p>Número de Contacto</p>
-                            <h3>
-                                <a href="tel:+2085550112">+51 902192976</a>
-                            </h3>
+                            <h4>
+                                <a href="tel:<?=$datosEmpresa->numero_contacto;?>"><?=$datosEmpresa->numero_contacto;?></a>
+                            </h4>
                         </div>
                     </div>
                     <div class="contact-info-items wow fadeInUp" data-wow-delay=".5s">
@@ -1234,9 +1140,9 @@
                         </div>
                         <div class="content">
                             <p>Hacer una cotización</p>
-                            <h3>
-                                <a href="mailto:kidsa@gmail.com">info@gmail.com</a>
-                            </h3>
+                            <h4>
+                                <a href="mailto:<?=$datosEmpresa->correo_contacto;?>"><?=$datosEmpresa->correo_contacto;?></a>
+                            </h4>
                         </div>
                     </div>
                     <div class="contact-info-items wow fadeInUp" data-wow-delay=".7s">
@@ -1248,9 +1154,9 @@
                         </div>
                         <div class="content">
                             <p>Ubicación</p>
-                            <h3>
-                                Dirección de prueba 1012, Perú
-                            </h3>
+                            <h4>
+                                <?=$datosEmpresa->direccion_contacto;?>
+                            </h4>
                         </div>
                     </div>
                 </div>    
@@ -1267,13 +1173,13 @@
                                 </div>
                                 <div class="footer-content">
                                     <p>
-                                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. 
+                                        <!-- Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.  -->
                                     </p>
                                     <div class="social-icon d-flex align-items-center">
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                                        <a href="<?=$datosEmpresa->link_facebook;?>"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="<?=$datosEmpresa->link_instagram;?>"><i class="fab fa-instagram"></i></a>
+                                        <a href="<?=$datosEmpresa->link_linkedin;?>"><i class="fa-brands fa-linkedin-in"></i></a>
+                                        <a href="<?=$datosEmpresa->link_otros;?>"><i class="fa-brands fa-youtube"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -1285,29 +1191,12 @@
                                 </div>
                                 <ul class="list-area">
                                     <li>
-                                        <a href="program-details.html">
+                                        <a href="#about">
                                             <i class="fa-solid fa-chevron-right"></i>
                                             Sobre Nosotros
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="news-details.html">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                            FAQ’S
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="faq.html">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                            Contáctanos
-                                        </a>
-                                    </li>
-                                    <!-- <li>
-                                        <a href="contact.html">
-                                            <i class="fa-solid fa-chevron-right"></i>
-                                            Contact Us
-                                        </a>
-                                    </li> -->
+                                  
                                 </ul>
                             </div>
                         </div>
@@ -1318,25 +1207,25 @@
                                 </div>
                                 <ul class="list-area">
                                     <li>
-                                        <a href="program-details.html">
+                                        <a href="#programs">
                                             <i class="fa-solid fa-chevron-right"></i>
                                             Programa 1
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="program-details.html">
+                                        <a href="#programs">
                                             <i class="fa-solid fa-chevron-right"></i>
                                             Programa 2
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="program-details.html">
+                                        <a href="#programs">
                                             <i class="fa-solid fa-chevron-right"></i>
                                             Programa 3
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="program-details.html">
+                                        <a href="#programs">
                                             <i class="fa-solid fa-chevron-right"></i>
                                             Programa 4
                                         </a>
@@ -1344,7 +1233,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp d-none" data-wow-delay=".7s">
+                        <!-- <div class="col-xl-4 col-lg-4 col-md-6 wow fadeInUp d-none" data-wow-delay=".7s">
                             <div class="single-footer-widget style-margin">
                                 <div class="widget-head">
                                     <h3>Recent Posts</h3>
@@ -1390,7 +1279,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -1401,10 +1290,10 @@
                 <div class="container">
                     <div class="footer-wrapper d-flex align-items-center justify-content-between">
                         <p class="wow fadeInLeft color-2" data-wow-delay=".3s">
-                            © All Copyright 2024 by <a href="index.html">Nuam</a>
+                            © All Copyright 2024 Desarrollado por <a href="https://diintec.com">Diintec Agency</a>
                         </p>
                         <ul class="footer-menu wow fadeInRight" data-wow-delay=".5s">
-                            <li>
+                            <!-- <li>
                                 <a href="contact.html">
                                     Términos & Condiciones
                                 </a>
@@ -1413,7 +1302,7 @@
                                 <a href="contact.html">
                                     Políticas de Privacidad
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>

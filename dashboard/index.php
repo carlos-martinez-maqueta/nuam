@@ -1,3 +1,18 @@
+<?php
+    session_start(); // Iniciar sesión
+    include 'config/conexion.php';
+ 
+    // Verificar si el usuario tiene una sesión activa
+    if (!isset($_SESSION['user_id'])) {
+        // Si no hay sesión, redirigir al inicio de sesión
+        header('Location: ../login');
+        exit(); // Detener ejecución para evitar que se cargue el contenido
+    }
+    // Configurar la zona horaria a la de Perú
+    date_default_timezone_set('America/Lima');
+
+    include 'config/zonaHoraria.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +69,7 @@
                         </div>
                         <div class="d-flex align-items-center gap-2 page-header-right-items-wrapper">
                             <div id="19 Mayo" class="reportrange-picker d-flex align-items-center">
-                                <span class="reportrange-picker-field">19 MAYO</span>
+                                <span class="reportrange-picker-field"><?php echo "$dia de $mes";?></span>
                             </div>
                           
                         </div>

@@ -1,6 +1,24 @@
 <?php
 class Globales
 {
+        public static function getUser($id)
+    {
+        global $conn;
+        $statement = $conn->prepare("SELECT * FROM tbl_usuarios WHERE id=:id");
+        $statement->bindValue(":id", $id);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_OBJ);
+        return $result;
+    } 
+    public static function getDatos($id)
+    {
+        global $conn;
+        $statement = $conn->prepare("SELECT * FROM tbl_datos WHERE id=:id");
+        $statement->bindValue(":id", $id);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_OBJ);
+        return $result;
+    } 
     public static function getEventos()
     {
         global $conn;

@@ -1,8 +1,9 @@
 <?php
     include 'config/conexion.php';
     include 'class/global.php';
-    // $id_user = $_SESSION['user_id'];
-    
+     $id_user = $_SESSION['user_id'];
+ 
+    $userObj = Globales::getUser($id_user);
     $eventosNuam = Globales::getEventos();
     $modalidadReserva = Globales::getModalidad();
     $horarios = Globales::getHorarios();
@@ -21,6 +22,62 @@
                 <li class="nxl-item nxl-caption">
                     <label>PLATAFORMA NUAM</label>
                 </li>
+                <?php if ($userObj->tipo === '2') {?>
+                    <li class="nxl-item nxl-hasmenu">
+                        <a href="javascript:void(0);" class="nxl-link">
+                            <span class="nxl-micon"><i class="feather-airplay"></i></span>
+                            <span class="nxl-mtext">Dashboards</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
+                        </a>
+                        <ul class="nxl-submenu">
+                            <li class="nxl-item"><a class="nxl-link" href="index">Inicio</a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="avances-academicos">Avances</a></li>
+                        </ul>
+                    </li>
+                    <li class="nxl-item nxl-hasmenu">
+                        <a href="javascript:void(0);" class="nxl-link">
+                            <span class="nxl-micon"><i class="feather-send"></i></span>
+                            <span class="nxl-mtext">Tareas</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
+                        </a>
+                        <ul class="nxl-submenu">
+                            <li class="nxl-item"><a class="nxl-link" href="tareas-pendientes">Tareas Pendientes</a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="historial-tareas-enviadas">Historial de Tareas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nxl-item nxl-hasmenu">
+                        <a href="javascript:void(0);" class="nxl-link">
+                            <span class="nxl-micon"><i class="feather-at-sign"></i></span>
+                            <span class="nxl-mtext">Pruebas</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
+                        </a>
+                        <ul class="nxl-submenu">
+                            <li class="nxl-item"><a class="nxl-link" href="prueba-conocimiento">Pruebas de Conocimiento</a></li>
+                        </ul>
+                    </li>
+                    <li class="nxl-item nxl-hasmenu">
+                        <a href="javascript:void(0);" class="nxl-link">
+                            <span class="nxl-micon"><i class="feather-dollar-sign"></i></span>
+                            <span class="nxl-mtext">Pagos</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
+                        </a>
+                        <ul class="nxl-submenu">
+                            <li class="nxl-item"><a class="nxl-link" href="pagos">Pagos Pendientes</a></li>
+                            <li class="nxl-item"><a class="nxl-link" href="historial-pagos">Historial de Pagos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nxl-item nxl-hasmenu">
+                        <a href="eventos" class="nxl-link">
+                            <span class="nxl-micon"><i class="feather-cast"></i></span>
+                            <span class="nxl-mtext">Eventos</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
+                        </a>
+                    </li>                
+                    <li class="nxl-item nxl-hasmenu">
+                        <a href="javascript:void(0);" class="nxl-link">
+                            <span class="nxl-micon"><i class="feather-life-buoy"></i></span>
+                            <span class="nxl-mtext">Centro de Ayuda</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
+                        </a>
+                        <ul class="nxl-submenu">
+                            <li class="nxl-item"><a class="nxl-link" href="reservar-cita">Reservar Cita</a></li>
+                        </ul>
+                    </li>
+                <?php } else{ ?>
                 <li class="nxl-item nxl-hasmenu">
                     <a href="javascript:void(0);" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-airplay"></i></span>
@@ -37,7 +94,7 @@
                         <span class="nxl-mtext">Tareas</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="tareas-pendientes">Tareas Pendientes</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="tareas-pendientes">Crear Tareas</a></li>
                         <li class="nxl-item"><a class="nxl-link" href="historial-tareas-enviadas">Historial de Tareas</a></li>
                     </ul>
                 </li>
@@ -47,7 +104,7 @@
                         <span class="nxl-mtext">Pruebas</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="prueba-conocimiento">Pruebas de Conocimiento</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="prueba-conocimiento">Crear Pruebas</a></li>
                     </ul>
                 </li>
                 <li class="nxl-item nxl-hasmenu">
@@ -61,9 +118,9 @@
                     </ul>
                 </li>
                 <li class="nxl-item nxl-hasmenu">
-                    <a href="eventos" class="nxl-link">
+                    <a href="crear-eventos" class="nxl-link">
                         <span class="nxl-micon"><i class="feather-cast"></i></span>
-                        <span class="nxl-mtext">Eventos</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
+                        <span class="nxl-mtext">Crear Eventos</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
                     </a>
                 </li>                
                 <li class="nxl-item nxl-hasmenu">
@@ -72,12 +129,11 @@
                         <span class="nxl-mtext">Centro de Ayuda</span><span class="nxl-arrow"><i class="feather-chevron-right"></i></span>
                     </a>
                     <ul class="nxl-submenu">
-                        <li class="nxl-item"><a class="nxl-link" href="reservar-cita">Reservar Cita</a></li>
+                        <li class="nxl-item"><a class="nxl-link" href="listado-citas">Listado de Citas</a></li>
                     </ul>
                 </li>
-                <!-- <div class="p-5">
-                    <img src="../assets/img/tree-shape.png" class="img-fluid" alt="">
-                </div> -->
+                <?php }?>
+
             </ul>
             <div class="card text-center">
                 <div class="card-body">
